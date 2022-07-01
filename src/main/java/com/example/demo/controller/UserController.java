@@ -31,18 +31,20 @@ public class UserController {
         return IUserService.listUsersByCondition(user);
     }
 /*分页查询*/
+    /*@ApiOperation(value = "todo")
+    @GetMapping(value = "", produces = {"application/json;charset=UTF-8"})
     @ResponseBody
     @RequestMapping("/findPage")
     public List<User> findPage(@RequestParam int pageNum, @RequestParam int pageSize) {
-        // 设置分页查询参数
+    // 设置分页查询参数
         PageHelper.startPage(pageNum, pageSize);
         List<User> listUsers =IUserService.listUsers();
 
         for (User user : listUsers) {
-            System.out.println("element : " + user);
-        }
+        System.out.println("element : " + user);
+    }
 
-        // 封装分页查询结果到 PageInfo 对象中以获取相关分页信息
+    // 封装分页查询结果到 PageInfo 对象中以获取相关分页信息
         PageInfo pageInfo = new PageInfo(listUsers);
         System.out.println("总页数: " + pageInfo.getPages());
         System.out.println("总记录数: " + pageInfo.getTotal());
@@ -50,5 +52,6 @@ public class UserController {
         System.out.println("当前页面记录数量: " + pageInfo.getSize());
 
         return pageInfo.getList();
-    }
+}*/
+
 }
