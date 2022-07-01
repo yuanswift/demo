@@ -1,11 +1,11 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import com.example.demo.dao.PositionDao;
-import com.example.demo.service.impl.PositionService;
+import com.example.demo.pojo.CityDTO;
+import com.example.demo.service.PositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.Position;
 import java.util.List;
 
 @Service(value = "PositionService")
@@ -14,12 +14,9 @@ public class PositionServiceImpl implements PositionService {
     PositionDao positionDao;
 
     @Override
-    public List<Position> getallpositionlimit(Integer curPage, Integer pageSize) {
-        return positionDao.getallpositionlimit(curPage,pageSize);
+    public List<CityDTO> getAllPositionLimit(Integer curPage, Integer pageSize) {
+        return positionDao.getallpositionlimit(curPage, pageSize);
     }
-
-
-
 
 
 }

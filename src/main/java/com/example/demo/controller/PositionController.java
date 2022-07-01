@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.impl.PositionService;
+import com.example.demo.pojo.CityDTO;
+import com.example.demo.service.PositionService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,18 +21,16 @@ public class PositionController {
 
     @ApiOperation("todo")
     @RequestMapping("/getallpositionlimit")
-    public  Object getallpositionlimit(@RequestParam(value = "curPage")Integer curPage,
-                                       @RequestParam(value = "pageSize")Integer pageSize){
-        Map<String,Object> map=new HashMap<>();
-        List<Position>data=positionService.getallpositionlimit((curPage-1)*pageSize,pageSize);
-        if (data!=null&&data.size()>0){
-            map.put("code",200);
-            map.put("msg","获取数据成功");
-            map.put("data",data);
-        }
-        else {
-            map.put("code",100);
-            map.put("msg","暂时没有数据");
+    public Object getallpositionlimit(@RequestParam(value = "curPage") Integer curPage, @RequestParam(value = "pageSize") Integer pageSize) {
+        Map<String, Object> map = new HashMap<>();
+        List<CityDTO> data = positionService.getAllPositionLimit((curPage - 1) * pageSize, pageSize);
+        if (data != null && data.size() > 0) {
+            map.put("code", 200);
+            map.put("msg", "获取数据成功");
+            map.put("data", data);
+        } else {
+            map.put("code", 100);
+            map.put("msg", "暂时没有数据");
         }
         return map;
     }
