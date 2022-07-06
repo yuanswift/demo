@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Objects;
 
 @Data
-public class User {
+public class City {
     private int ID;
     private String Name;
     private String CountryCode;
@@ -56,8 +56,8 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return ID == user.ID && Population == user.Population && Objects.equals(Name, user.Name) && Objects.equals(CountryCode, user.CountryCode) && Objects.equals(District, user.District);
+        City city = (City) o;
+        return ID == city.ID && Population == city.Population && Objects.equals(Name, city.Name) && Objects.equals(CountryCode, city.CountryCode) && Objects.equals(District, city.District);
     }
 
     @Override
