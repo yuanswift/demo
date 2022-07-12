@@ -3,65 +3,58 @@ package com.example.demo.entity;
 import lombok.Data;
 
 import java.util.Objects;
+/**
+ * 将city数据库的属性生成get和set方法
+ * */
 
+/**
+ * 将实体类的成员的属性生成get和set方法
+ * */
 @Data
 public class City {
-    private int ID;
-    private String Name;
-    private String CountryCode;
-    private String District;
-    private int Population;
+    private int id;
+    private String name;
+    private String countryCode;
+    private String district;
+    private int population;
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getCountryCode() {
-        return CountryCode;
+        return countryCode;
     }
 
     public void setCountryCode(String countryCode) {
-        CountryCode = countryCode;
+        this.countryCode = countryCode;
     }
 
     public String getDistrict() {
-        return District;
+        return district;
     }
 
     public void setDistrict(String district) {
-        District = district;
+        this.district = district;
     }
 
     public int getPopulation() {
-        return Population;
+        return population;
     }
 
     public void setPopulation(int population) {
-        Population = population;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        City city = (City) o;
-        return ID == city.ID && Population == city.Population && Objects.equals(Name, city.Name) && Objects.equals(CountryCode, city.CountryCode) && Objects.equals(District, city.District);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(ID, Name, CountryCode, District, Population);
+        this.population = population;
     }
 }
