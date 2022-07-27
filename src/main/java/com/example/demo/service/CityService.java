@@ -12,6 +12,8 @@ public interface CityService {
     List<City> listCity();
     /*id查询city*/
     List<City> listCityByCondition(City city);
+    //分页查询
+    List<City> listCity_page(Integer index,Integer pageSize);
     /*city添加*/
     int addCity(City city);
 

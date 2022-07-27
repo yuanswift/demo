@@ -2,27 +2,22 @@ package com.example.demo.entity;
 
 import lombok.Data;
 
-import java.util.Objects;
 /**
  * 将city数据库的属性生成get和set方法
- * */
-
-/**
- * 将实体类的成员的属性生成get和set方法
- * */
+ */
 @Data
 public class City {
-    private int id;
+    private Integer id;
     private String name;
     private String countryCode;
     private String district;
-    private int population;
+    private Integer population;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -50,11 +45,11 @@ public class City {
         this.district = district;
     }
 
-    public int getPopulation() {
+    public Integer getPopulation() {
         return population;
     }
 
-    public void setPopulation(int population) {
+    public void setPopulation(Integer population) {
         this.population = population;
     }
 }

@@ -29,10 +29,6 @@ public interface CountryLanguageDao {
     /*删除countryLanguage*/
     @Delete("delete from countryLanguage where countryCode=#{countrycode}")
     boolean deleteByCountryCode(String countryCode);
-
-    /*修改countryLanguage*/
-    @Update("insert countryLanguage set countryCode=#{countryCode},language=#{language},lsOfficial=#{lsOfficial},percentage=#{percentage}")
-    void updateByCountryCode(Country country);
 }
 
 

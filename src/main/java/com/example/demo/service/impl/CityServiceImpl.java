@@ -38,6 +38,10 @@ public class CityServiceImpl implements CityService {
 //        return cityDao.findCityByCondition(user);
         return new ArrayList<>();
     }
+    @Override
+    public List<City> listCity_page(Integer index,Integer pageSize){
+        return cityDao.findPage(index,pageSize);
+    }
 
     @Override
     public int addCity(City city) {

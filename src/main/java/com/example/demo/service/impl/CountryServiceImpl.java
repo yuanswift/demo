@@ -54,7 +54,9 @@ public class CountryServiceImpl implements CountryService {
     public boolean deleteCountry(String code) {
         boolean flag = false;
         try {
-            cityDao.deleteByCountryCode(code);
+            if (cityDao.deleteByCountryCode(code)) {
+                System.out.println("== 删除城市成功");
+            }
             countryLanguageDao.deleteByCountryCode(code);
             countryDao.deleteCountry(code);
             flag = true;
@@ -63,6 +65,7 @@ public class CountryServiceImpl implements CountryService {
         }
         return flag;
     }
+
     /*@Override
     public boolean addCountry(Country country) {
         return countryDao.addCountry(country);
@@ -72,14 +75,17 @@ public class CountryServiceImpl implements CountryService {
     public boolean deleteCountry(String code) {
         return countryDao.deleteCountry(code);
     }*/
+    @Override
+    public List<Country> listCountry_page(Integer index, Integer pageSize) {
+        return countryDao.findPage(index, pageSize);
+    }
 
     @Override
     public boolean updateCountry(Country country) {
         boolean flag = false;
         try {
             countryDao.updateCountry(country);
-            cityDao.updateByCountryCode(country);
-            countryLanguageDao.updateByCountryCode(country);
+            flag = true;
         } catch (Exception e) {
             e.printStackTrace();
         }
